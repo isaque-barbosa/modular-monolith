@@ -3,8 +3,8 @@
 namespace User.Module.Models;
 
 [JsonSerializable(typeof(UserViewModel))]
-public partial class MyJsonContext : JsonSerializerContext
+public partial class AppJsonSerializerContext : JsonSerializerContext
 {
 }
 
-public struct UserViewModel(int Id);
+public record UserViewModel(string Name, string Email);

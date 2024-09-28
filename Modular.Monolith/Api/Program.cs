@@ -1,17 +1,14 @@
-using Microsoft.AspNetCore.Mvc.ApplicationParts;
-using User.Module.Models;
+using Api.Configuration;
 
 var builder = WebApplication.CreateSlimBuilder(args);
 
 builder
     .Services
-    .AddControllers()
-    .AddJsonOptions(options => 
-    {
-        options.JsonSerializerOptions.TypeInfoResolver<MyJsonContext>();
-    })
-    .PartManager.ApplicationParts
-    .Add(new AssemblyPart(typeof(User.Module.Application.UserController).Assembly));
+    .AddControllers();
+
+builder
+    .Services
+    .AddModules();
 
 var app = builder.Build();
 
