@@ -4,3 +4,8 @@ GET {{Api_HostAddress}}/api/User/1
 Accept: application/json
 
 ###
+
+GET {{Api_HostAddress}}/api/Product/1
+Accept: application/json
+
+###
