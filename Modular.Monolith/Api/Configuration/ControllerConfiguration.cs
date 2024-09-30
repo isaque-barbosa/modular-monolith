@@ -11,6 +11,7 @@ public static class ControllerConfiguration
     {
         AddControllersFromNamespace(services, "User.Module.Application");
         AddControllersFromNamespace(services, "Product.Module.Application");
+        AddControllersFromNamespace(services, "Payment.Module.Application");
 
         return services;
     }

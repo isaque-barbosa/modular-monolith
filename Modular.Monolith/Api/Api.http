@@ -9,3 +9,8 @@ GET {{Api_HostAddress}}/api/Product/1
 Accept: application/json
 
 ###
+
+GET {{Api_HostAddress}}/api/Cart/1
+Accept: application/json
+
+###
