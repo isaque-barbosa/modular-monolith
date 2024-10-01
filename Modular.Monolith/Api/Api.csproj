@@ -16,6 +16,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Payment\Payment.Module\Payment.Module.csproj" />
     <ProjectReference Include="..\Product\Product.Module\Product.Module.csproj" />
+    <ProjectReference Include="..\User\User.Contract\User.Contract.csproj" />
     <ProjectReference Include="..\User\User.Module\User.Module.csproj" />
   </ItemGroup>
 

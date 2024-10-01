@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Payment.Module.Models;
 using System.Text.Json;
+using User.Contract.IService;
 
 namespace Payment.Module.Controllers;
 
@@ -8,9 +9,10 @@ namespace Payment.Module.Controllers;
 [Route("api/[controller]")]
 public class CartController : Controller
 {
-    public CartController()
+    private readonly IUserService _userService;
+    public CartController(IUserService userService)
     {
-        
+        _userService = userService;
     }
 
     [HttpGet("{id:int}")]
@@ -23,9 +25,9 @@ public class CartController : Controller
             new(2, "Product 2", 20.0m, 1)
         };
         // Search the User through User Module
-        var user = new UserViewModel(1);
+        var user = await _userService.GetUser(1);
 
-        var cart = new CartViewModel(1, products, user);
+        var cart = new CartViewModel(1, products, new(user.Name));
 
         return Ok(JsonSerializer.Serialize(cart, AppJsonSerializerContext.Default.CartViewModel));
     }

@@ -14,4 +14,4 @@ public record CartViewModel(int Id, ProductViewModel[] Products, UserViewModel U
 
 public record ProductViewModel(int Id, string Name, decimal Price, int Quantity);
 
-public record UserViewModel(int Id);
+public record UserViewModel(string Name);
