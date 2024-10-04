@@ -5,18 +5,17 @@ using User.Module.Service;
 
 var builder = WebApplication.CreateSlimBuilder(args);
 
-builder
-    .Services
+var services = builder.Services;
+services
     .AddControllers()
     .AddJsonOptions(options =>
         options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
+services.AddEndpointsApiExplorer();
 
-builder
-    .Services
+services
     .AddModules();
 
-builder
-    .Services
+services
     .AddScoped<IUserService, UserService>();
 
 var app = builder.Build();

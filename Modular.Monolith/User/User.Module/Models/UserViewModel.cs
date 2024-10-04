@@ -1,10 +1,3 @@
-﻿using System.Text.Json.Serialization;
-
-namespace User.Module.Models;
-
-[JsonSerializable(typeof(UserViewModel))]
-public partial class AppJsonSerializerContext : JsonSerializerContext
-{
-}
+﻿namespace User.Module.Models;
 
 public record UserViewModel(string Name, string Email);

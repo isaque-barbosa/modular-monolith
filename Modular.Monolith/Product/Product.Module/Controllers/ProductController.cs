@@ -16,11 +16,7 @@ public class ProductController : Controller
     [HttpGet("{id:int}")]
     public async Task<ActionResult<ProductViewModel>> Get(int id)
     {
-        var options = new JsonSerializerOptions
-        {
-            TypeInfoResolver = AppJsonSerializerContext.Default
-        };
         var product = new ProductViewModel(Name: "Sabonete", Price: 7.59M);
-        return Ok(JsonSerializer.Serialize(product, options));
+        return Ok(product);
     }
 }

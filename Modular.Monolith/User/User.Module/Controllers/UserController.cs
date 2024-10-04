@@ -16,11 +16,7 @@ public class UserController : Controller
     [HttpGet("{id:int}")]
     public async Task<ActionResult<UserViewModel>> Get(int id)
     {
-        var options = new JsonSerializerOptions
-        {
-            TypeInfoResolver = AppJsonSerializerContext.Default
-        };
         var user = new UserViewModel(Name: "Teste", Email: "teste@teste.com");
-        return Ok(JsonSerializer.Serialize(user, options));
+        return Ok(user);
     }
 }

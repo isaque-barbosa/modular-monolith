@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Payment.Module.Models;
-using System.Text.Json;
 using User.Contract.IService;
 
 namespace Payment.Module.Controllers;
@@ -29,6 +28,6 @@ public class CartController : Controller
 
         var cart = new CartViewModel(1, products, new(user.Name));
 
-        return Ok(JsonSerializer.Serialize(cart, AppJsonSerializerContext.Default.CartViewModel));
+        return Ok(cart);
     }
 }
